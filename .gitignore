@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+build/
+dist/
+*.egg-info/
+.DS_Store
+.ipynb_checkpoints/
+data/pflotran/*
+!data/pflotran/.gitkeep
+data/si_diffusion/*
+!data/si_diffusion/.gitkeep
+data/downloads/
+results/**/*.pt
+results/**/*.npz
+results/**/*.npy
