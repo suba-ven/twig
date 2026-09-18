@@ -1,7 +1,6 @@
-# TC-WGNO reproducibility package
+# TWIG reproducibility package
 
-Code and experiment records for **Temporal-Causal Wavelet Graph Neural Operator
-(TC-WGNO)**. The package reproduces the capacity-matched PFLOTRAN H=10 benchmark
+Code and experiment records for **TWIG: Time-Causal Wavelet Operators for Autoregressive Forecasting on Irregular Graphs**. The package reproduces the capacity-matched PFLOTRAN H=10 benchmark
 and the SI-diffusion benchmark reported in the accompanying paper.
 
 ## Install
