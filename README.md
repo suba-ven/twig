@@ -19,16 +19,16 @@ PyTorch/CUDA installation. Airfoil uses TFRecord files and the `tfrecord` packag
 ## Selected experiments
 
 [configs/paper_selections.json](configs/paper_selections.json) records all 27
-model/dataset selections, parameter counts, seeds, source provenance, selected
+model/dataset selections, parameter counts, source provenance, selected
 field checkpoints, and Airfoil's per-run training settings.
 
 | Dataset | Context / direct forecast | Rollout | Selected runs | TC-WGNO |
 |---|---|---|---|---|
-| PFLOTRAN | 10 / 10 | 60 | Seeds 42, 43, 44 | K=5, S=4, depth 10, width 120, SwiGLU; 1,000,620 parameters |
-| SI diffusion | 14 / 14 | 100 | TC: 42, 43, 45; baselines: 42, 43, 44 | K=5, S=4, depth 8, width 34, SwiGLU; 70,233 parameters |
+| PFLOTRAN | 10 / 10 | 60 | Three runs per model | K=5, S=4, depth 10, width 120, SwiGLU; 1,000,620 parameters |
+| SI diffusion | 14 / 14 | 100 | Three runs per model | K=5, S=4, depth 8, width 34, SwiGLU; 70,233 parameters |
 | Original Airfoil200 | 20 / 20 | 180 | Runs 01–03, except GPS: 01/03/05 | K=5, S=12, depth 10, width 248, SwiGLU; 9,875,176 parameters |
 
-Airfoil run `r` uses seed `2026 + r - 1`. GPS uses depth 6, heads 6,
+Airfoil GPS uses depth 6, heads 6,
 width 396 and the three runs with the **largest saved mean rollout RMSE**
 among seven completed runs. The selection is frozen; new runs are not reranked.
 Airfoil Graph FNO uses depth 14, width 64, **169 modes**, overriding the inherited
@@ -36,7 +36,7 @@ Airfoil Graph FNO uses depth 14, width 64, **169 modes**, overriding the inherit
 stride-2 and stride-3 datasets are different experiments.
 
 PFLOTRAN uses a 1M target capacity, up to 100 epochs, AdamW at 5e-4 with cosine
-decay to 1e-6, weight decay 1e-5, patience 10, and data-split seed 0.
+decay to 1e-6, weight decay 1e-5, and patience 10.
 SI uses 30 epochs, Adam at 3e-4, weight decay 1e-5, and patience 10.
 Airfoil uses 100 epochs with the saved per-model batch sizes (4 or 8), warmup
 and cosine schedule. Its runner restores each selected run's checkpoint config.

@@ -15,6 +15,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('inputs', nargs='+')
     p.add_argument('--model', help='Model key; omitted means all nine selected models')
+    # All nine selected PFLOTRAN models use training seeds 42, 43, and 44.
     p.add_argument('--seeds', type=int, nargs='+', default=[42, 43, 44])
     p.add_argument('--epochs', type=int, default=100)
     p.add_argument('--output', type=Path, default=Path('results/pflotran/selected'))
@@ -22,6 +23,7 @@ def main():
     a = p.parse_args()
     a.output.mkdir(parents=True, exist_ok=True)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    # The shared data split uses seed 0, independently of the training seeds.
     train, val, test, info = build_block_dataloaders_3d(
         a.inputs, history=10, forecast_horizon=10, batch_size=8, seed=0,
         train_frac=0.8, val_frac=0.1, q_low=1, q_high=99, normalize=True,

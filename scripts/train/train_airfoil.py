@@ -29,6 +29,8 @@ def main():
     config.CONFIG = registry.CONFIG = training.CONFIG = cfg
     specs, matched = build_paper_specs(cfg, selected)
     training.build_model_specs = lambda: (specs, matched)
+    # Airfoil run r uses seed 2026 + r - 1. Selected runs 1/2/3 use
+    # seeds 2026/2027/2028; GPS runs 1/3/5 use seeds 2026/2028/2030.
     for entry in selected.values():
         for run, seed in zip(entry['runs'], entry['seeds']):
             if cfg.seed + run - 1 != seed: raise ValueError('Run/seed mismatch')
