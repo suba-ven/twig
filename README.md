@@ -23,7 +23,7 @@ model/dataset selections, parameter counts, source provenance, selected
 field checkpoints, and Airfoil's per-run training settings.
 
 | Dataset | Context / direct forecast | Rollout | TWIG |
-|---|---|---|---|---|
+|---|---|---|---|
 | PFLOTRAN | 10 / 10 | 60 | K=5, S=4, depth 10, width 120, SwiGLU; 1,000,620 parameters |
 | SI diffusion | 14 / 14 | 100 | K=5, S=4, depth 8, width 34, SwiGLU; 70,233 parameters |
 | Original Airfoil200 | 20 / 20 | 180 | K=5, S=12, depth 10, width 248, SwiGLU; 9,875,176 parameters |
