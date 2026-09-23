@@ -38,7 +38,7 @@ stride-2 and stride-3 datasets are different experiments.
 PFLOTRAN uses a 1M target capacity, up to 100 epochs, AdamW at 5e-4 with cosine
 decay to 1e-6, weight decay 1e-5, and patience 10.
 SI uses 30 epochs, Adam at 3e-4, weight decay 1e-5, and patience 10.
-Airfoil uses 100 epochs with the saved per-model batch sizes (4 or 8), warmup
+Airfoil uses 100 epochs with the saved per-model batch size 4/8, warmup
 and cosine schedule. Its runner restores each selected run's checkpoint config.
 
 ## Replot the reported results
