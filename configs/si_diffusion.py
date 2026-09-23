@@ -9,7 +9,10 @@ class SIDiffusionConfig(ExperimentConfig):
     rollout_steps: int = 100
     channels: int = 1
     target_parameters: int = 70_224
-    tc_wavelet_bands: tuple[int, ...] = (2, 6)
+    tc_wavelet_bands: tuple[int, ...] = (5,)
+    tc_seeds: tuple[int, ...] = (42, 43, 45)
+    learning_rate: float = 3e-4
+    weight_decay: float = 1e-5
 
 
 CONFIG = SIDiffusionConfig()

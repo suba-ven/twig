@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from .direct14_registry import count_parameters, direct_sa_name
 
-SWIGLU_NAME = "SwiGLU-TC-WGNO-D14-K6"
+SWIGLU_NAME = "SwiGLU-TC-WGNO-D14-K5-H133"
 SWIGLU_HIDDEN_MULT = 4.0 / 3.0
 
 
@@ -40,7 +40,7 @@ def replace_wavelet_ffns_with_swiglu(model, hidden_mult=SWIGLU_HIDDEN_MULT):
 
 
 def build_swiglu_spec(base_specs):
-    base_name = direct_sa_name(6)
+    base_name = direct_sa_name(5)
     base_spec = base_specs[base_name]
     factory = lambda: replace_wavelet_ffns_with_swiglu(base_spec.factory())
     probe = factory()
