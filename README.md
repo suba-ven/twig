@@ -22,11 +22,11 @@ PyTorch/CUDA installation. Airfoil uses TFRecord files and the `tfrecord` packag
 model/dataset selections, parameter counts, source provenance, selected
 field checkpoints, and Airfoil's per-run training settings.
 
-| Dataset | Context / direct forecast | Rollout | Selected runs | TC-WGNO |
+| Dataset | Context / direct forecast | Rollout | TWIG |
 |---|---|---|---|---|
-| PFLOTRAN | 10 / 10 | 60 | Three runs per model | K=5, S=4, depth 10, width 120, SwiGLU; 1,000,620 parameters |
-| SI diffusion | 14 / 14 | 100 | Three runs per model | K=5, S=4, depth 8, width 34, SwiGLU; 70,233 parameters |
-| Original Airfoil200 | 20 / 20 | 180 | Runs 01–03, except GPS: 01/03/05 | K=5, S=12, depth 10, width 248, SwiGLU; 9,875,176 parameters |
+| PFLOTRAN | 10 / 10 | 60 | K=5, S=4, depth 10, width 120, SwiGLU; 1,000,620 parameters |
+| SI diffusion | 14 / 14 | 100 | K=5, S=4, depth 8, width 34, SwiGLU; 70,233 parameters |
+| Original Airfoil200 | 20 / 20 | 180 | K=5, S=12, depth 10, width 248, SwiGLU; 9,875,176 parameters |
 
 Airfoil GPS uses depth 6, heads 6,
 width 396 and the three runs with the **largest saved mean rollout RMSE**
