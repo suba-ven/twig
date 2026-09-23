@@ -8,3 +8,4 @@ torch>=2.1
 torch-geometric>=2.4
 tqdm>=4.65
 pytest>=7.4
+tfrecord>=1.14

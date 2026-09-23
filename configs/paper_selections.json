@@ -1,0 +1,1240 @@
+{
+  "description": "Frozen selections used by final-paper-figures/generate_extended_curves.py; source paths are provenance, not runtime dependencies.",
+  "datasets": {
+    "pflotran": {
+      "history": 10,
+      "forecast_horizon": 10,
+      "rollout_steps": 60,
+      "models": {
+        "TC-WGNO": {
+          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/wavelet_swiglu_raw_sa_tcwno_h10_k5_m128_d10_curves.npy",
+          "model_key": "wavelet_swiglu_raw_sa_tcwno_h10_k5_m128_d10",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 1000620,
+          "architecture": {
+            "width": 120,
+            "depth": 10,
+            "K": 5,
+            "S": 4,
+            "modes": 128,
+            "encoder_width": 512,
+            "encoder_depth": 2,
+            "SwiGLU_multiplier": 1.3333333333333333,
+            "dropout": 0.05
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_seed43_44_100epoch_p1m_step60/models/wavelet_swiglu_raw_sa_tcwno_h10_k5_m128_d10_seed43_best.pt",
+          "field_run_or_seed": 43,
+          "capacity_match": {
+            "variant": "wavelet_swiglu",
+            "operator_width": 120,
+            "operator_depth": 10,
+            "encoder_width": 512,
+            "encoder_depth": 2,
+            "bands": 5,
+            "n_modes": 128,
+            "n_scales": 4,
+            "swiglu_mult": 1.3333333333333333,
+            "parameters": 1000620,
+            "target_parameters": 1000000,
+            "width_search": [
+              [
+                120,
+                1000620
+              ]
+            ]
+          }
+        },
+        "GPS Transformer": {
+          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/altk_recurrent_three_seed_100epoch_p1m_step60/families/gps_transformer_h10_curves.npy",
+          "model_key": "gps_transformer_h10",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 1015191,
+          "architecture": {
+            "width": 176,
+            "depth": 3,
+            "heads": 4
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/altk_recurrent_three_seed_100epoch_p1m_step60/models/gps_transformer_h10_seed44_best.pt",
+          "field_run_or_seed": 44,
+          "capacity_match": {
+            "width": 176,
+            "parameters": 1015191
+          }
+        },
+        "Graph FNO": {
+          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/graph_fno_h10_curves.npy",
+          "model_key": "graph_fno_h10",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 1047724,
+          "capacity_match": {
+            "width": 28,
+            "parameters": 1047724
+          }
+        },
+        "Graph WNO": {
+          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/plain_graph_wno_h10_curves.npy",
+          "model_key": "plain_graph_wno_h10",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 1023804,
+          "architecture": {
+            "width": 128,
+            "depth": 10,
+            "S": 4,
+            "modes": 128,
+            "dropout": 0.05
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_seed43_44_100epoch_p1m_step60/models/plain_graph_wno_h10_seed44_best.pt",
+          "field_run_or_seed": 44,
+          "capacity_match": {
+            "width": 128,
+            "parameters": 1023804
+          }
+        },
+        "MeshGraphNet": {
+          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/meshgraphnet_h10_curves.npy",
+          "model_key": "meshgraphnet_h10",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 976024,
+          "architecture": {
+            "width": 124,
+            "depth": 10,
+            "dropout": 0.05
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_seed43_44_100epoch_p1m_step60/models/meshgraphnet_h10_seed43_best.pt",
+          "field_run_or_seed": 43,
+          "capacity_match": {
+            "width": 124,
+            "parameters": 976024
+          }
+        },
+        "GAT": {
+          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/gat_h10_curves.npy",
+          "model_key": "gat_h10",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 1003940,
+          "architecture": {
+            "width": 240,
+            "depth": 3,
+            "heads": 4
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_seed43_44_100epoch_p1m_step60/models/gat_h10_seed44_best.pt",
+          "field_run_or_seed": 44,
+          "capacity_match": {
+            "width": 240,
+            "parameters": 1003940
+          }
+        },
+        "GATv2": {
+          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/gatv2_h10_curves.npy",
+          "model_key": "gatv2_h10",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 994640,
+          "capacity_match": {
+            "width": 220,
+            "parameters": 994640
+          }
+        },
+        "RNN": {
+          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/altk_recurrent_three_seed_100epoch_p1m_step60/families/rnn_h10_curves.npy",
+          "model_key": "rnn_h10",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 995244,
+          "capacity_match": {
+            "hidden_size": 248,
+            "parameters": 995244
+          }
+        },
+        "RNN-GNN Fusion": {
+          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/altk_recurrent_three_seed_100epoch_p1m_step60/families/rnn_gnn_fusion_h10_curves.npy",
+          "model_key": "rnn_gnn_fusion_h10",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 973601,
+          "capacity_match": {
+            "hidden_size": 240,
+            "parameters": 973601
+          }
+        }
+      },
+      "curves_sha256": "f66e69306940ff3f9125ea4a2e77b06128ec7bf628b3a2093a3e5f65a4d28bfb"
+    },
+    "si_diffusion": {
+      "history": 14,
+      "forecast_horizon": 14,
+      "rollout_steps": 100,
+      "models": {
+        "TC-WGNO": {
+          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/si_direct14_swiglu_four_model_30epoch_1seed/statistics/k5_paper_curves_seeds_42_43_45.npz",
+          "model_key": "SwiGLU-TC-WGNO-D14-K5-H133",
+          "seeds": [
+            42,
+            43,
+            45
+          ],
+          "parameters": 70233,
+          "architecture": {
+            "width": 34,
+            "depth": 8,
+            "K": 5,
+            "S": 4,
+            "modes": 64,
+            "SwiGLU_multiplier": 1.3333333333333333
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/si_direct14_swiglu_four_model_30epoch_1seed/models/swiglu_tc_wgno_d14_k5_h133_best.pt",
+          "field_run_or_seed": 42,
+          "factory_metadata": {
+            "family": "TC-WGNO-SwiGLU",
+            "history": 14,
+            "forecast_horizon": 14,
+            "temporal_bands": 5,
+            "spatial_wavelet_scales": 4,
+            "width": 34,
+            "depth": 8,
+            "training_mode": "direct_14_to_14",
+            "channel_mixer": "SwiGLU",
+            "swiglu_hidden_mult": 1.3333333333333333,
+            "matched_base": "SA-TC-WGNO-D14-K5"
+          }
+        },
+        "GPS Transformer": {
+          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/gps_transformer_d14_rollout_curves.npy",
+          "model_key": "GPS-Transformer-D14",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 67909,
+          "architecture": {
+            "width": 44,
+            "depth": 3,
+            "heads": 4
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/models/gps_transformer_d14_best.pt",
+          "field_run_or_seed": 43,
+          "factory_metadata": {
+            "family": "GPS-Transformer",
+            "history": 14,
+            "forecast_horizon": 14,
+            "width": 44,
+            "matched_to": "SA-TC-WGNO-D14-K2",
+            "training_mode": "direct_14_to_14"
+          }
+        },
+        "Graph FNO": {
+          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/artifacts/direct14_operator_baselines/statistics/graphfno_d14_rollout_curves.npy",
+          "model_key": "GraphFNO-D14",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 70864,
+          "architecture": {
+            "width": 10,
+            "depth": 10,
+            "modes": 64
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/artifacts/direct14_operator_baselines/models/graphfno_d14_best.pt",
+          "field_run_or_seed": 44,
+          "factory_metadata": {
+            "family": "GraphFNO",
+            "history": 14,
+            "forecast_horizon": 14,
+            "width": 10,
+            "layers": 10,
+            "n_modes": 64,
+            "training_mode": "direct_14_to_14",
+            "temporal_encoding": "raw_history_only",
+            "matched_target_parameters": 70224
+          }
+        },
+        "Graph WNO": {
+          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/artifacts/direct14_operator_baselines/statistics/gwno_d14_rollout_curves.npy",
+          "model_key": "GWNO-D14",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 64202,
+          "architecture": {
+            "width": 28,
+            "depth": 10,
+            "S": 4,
+            "modes": 64
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/artifacts/direct14_operator_baselines/models/gwno_d14_best.pt",
+          "field_run_or_seed": 44,
+          "factory_metadata": {
+            "family": "GWNO",
+            "history": 14,
+            "forecast_horizon": 14,
+            "width": 28,
+            "layers": 10,
+            "n_modes": 64,
+            "training_mode": "direct_14_to_14",
+            "temporal_encoding": "raw_history_only",
+            "matched_target_parameters": 70224
+          }
+        },
+        "MeshGraphNet": {
+          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/meshgraphnet_d14_rollout_curves.npy",
+          "model_key": "MeshGraphNet-D14",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 69006,
+          "architecture": {
+            "width": 44,
+            "processor_steps": 3
+          },
+          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/models/meshgraphnet_d14_best.pt",
+          "field_run_or_seed": 43,
+          "factory_metadata": {
+            "family": "MeshGraphNet",
+            "history": 14,
+            "forecast_horizon": 14,
+            "width": 44,
+            "processor_steps": 3,
+            "matched_to": "SA-TC-WGNO-D14-K2",
+            "training_mode": "direct_14_to_14"
+          }
+        },
+        "GAT": {
+          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/gat_d14_rollout_curves.npy",
+          "model_key": "GAT-D14",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 67514,
+          "factory_metadata": {
+            "family": "GAT",
+            "history": 14,
+            "forecast_horizon": 14,
+            "width": 60,
+            "matched_to": "SA-TC-WGNO-D14-K2",
+            "training_mode": "direct_14_to_14"
+          }
+        },
+        "GATv2": {
+          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/gatv2_d14_rollout_curves.npy",
+          "model_key": "GATv2-D14",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 69454,
+          "factory_metadata": {
+            "family": "GATv2",
+            "history": 14,
+            "forecast_horizon": 14,
+            "width": 56,
+            "matched_to": "SA-TC-WGNO-D14-K2",
+            "training_mode": "direct_14_to_14"
+          }
+        },
+        "RNN": {
+          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/rnn_d14_rollout_curves.npy",
+          "model_key": "RNN-D14",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 67854,
+          "factory_metadata": {
+            "family": "RNN",
+            "history": 14,
+            "forecast_horizon": 14,
+            "width": 64,
+            "matched_to": "SA-TC-WGNO-D14-K2",
+            "training_mode": "direct_14_to_14"
+          }
+        },
+        "RNN-GNN Fusion": {
+          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/rnn_gnn_fusion_d14_rollout_curves.npy",
+          "model_key": "RNN-GNN-Fusion-D14",
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "parameters": 72253,
+          "factory_metadata": {
+            "family": "RNN-GNN-Fusion",
+            "history": 14,
+            "forecast_horizon": 14,
+            "width": 64,
+            "matched_to": "SA-TC-WGNO-D14-K2",
+            "training_mode": "direct_14_to_14"
+          }
+        }
+      },
+      "curves_sha256": "bafbc0aeafc9976dea6f793f6eb5c87c6bac84b184efdb9923bdc4da1e1ccf6d"
+    },
+    "airfoil": {
+      "history": 20,
+      "forecast_horizon": 20,
+      "rollout_steps": 180,
+      "models": {
+        "TC-WGNO": {
+          "sources": [
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/paper_tc_wgno_s12.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/paper_tc_wgno_s12.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/paper_tc_wgno_s12.json"
+          ],
+          "model_key": "paper_tc_wgno_s12",
+          "seeds": [
+            2026,
+            2027,
+            2028
+          ],
+          "runs": [
+            1,
+            2,
+            3
+          ],
+          "parameters": 9875176,
+          "architecture": {
+            "width": 248,
+            "parameters": 9875176,
+            "bands": 5,
+            "depth": 10,
+            "n_scales": 12,
+            "n_modes": 128,
+            "swiglu": true,
+            "full_scale_transforms": true,
+            "enhanced_input": false
+          },
+          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/temporary_checkpoints/paper_tc_wgno_s12_best.pt",
+          "field_run_or_seed": 1,
+          "training_by_run": {
+            "1": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "2": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "3": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            }
+          }
+        },
+        "GPS Transformer": {
+          "sources": [
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_gps_d6h6_10m/runs/run_01/records/gps_transformer_h20_f20_depth6_heads6.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_gps_d6h6_10m/runs/run_03/records/gps_transformer_h20_f20_depth6_heads6.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_gps_d6h6_10m/runs/run_05/records/gps_transformer_h20_f20_depth6_heads6.json"
+          ],
+          "model_key": "gps_transformer_h20_f20_depth6_heads6",
+          "seeds": [
+            2026,
+            2028,
+            2030
+          ],
+          "runs": [
+            1,
+            3,
+            5
+          ],
+          "parameters": 9850982,
+          "architecture": {
+            "width": 396,
+            "parameters": 9850982,
+            "depth": 6,
+            "heads": 6
+          },
+          "selection": "Frozen runs 01,03,05: three largest saved mean rollout RMSEs among seven completed runs; do not rerank new runs.",
+          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_gps_d6h6_10m/runs/run_03/temporary_checkpoints/gps_transformer_h20_f20_depth6_heads6_best.pt",
+          "field_run_or_seed": 3,
+          "training_by_run": {
+            "1": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "3": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "5": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            }
+          }
+        },
+        "Graph FNO": {
+          "sources": [
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_graphfno_depth14_width64_modes169_10m/runs/run_01/records/graph_fno_h20_f20_depth14_width64_modes169.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_graphfno_depth14_width64_modes169_10m/runs/run_02/records/graph_fno_h20_f20_depth14_width64_modes169.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_graphfno_depth14_width64_modes169_10m/runs/run_03/records/graph_fno_h20_f20_depth14_width64_modes169.json"
+          ],
+          "model_key": "graph_fno_h20_f20_depth14_width64_modes169",
+          "seeds": [
+            2026,
+            2027,
+            2028
+          ],
+          "runs": [
+            1,
+            2,
+            3
+          ],
+          "parameters": 10001680,
+          "architecture": {
+            "width": 64,
+            "depth": 14,
+            "n_modes": 169,
+            "dropout": 0.05,
+            "parameters": 10001680
+          },
+          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_graphfno_depth14_width64_modes169_10m/runs/run_01/temporary_checkpoints/graph_fno_h20_f20_depth14_width64_modes169_best.pt",
+          "field_run_or_seed": 1,
+          "training_by_run": {
+            "1": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "2": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "3": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            }
+          }
+        },
+        "Graph WNO": {
+          "sources": [
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/plain_graph_wno_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/plain_graph_wno_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/plain_graph_wno_h10.json"
+          ],
+          "model_key": "plain_graph_wno_h10",
+          "seeds": [
+            2026,
+            2027,
+            2028
+          ],
+          "runs": [
+            1,
+            2,
+            3
+          ],
+          "parameters": 10025164,
+          "architecture": {
+            "width": 428,
+            "parameters": 10025164
+          },
+          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/temporary_checkpoints/plain_graph_wno_h10_best.pt",
+          "field_run_or_seed": 2,
+          "training_by_run": {
+            "1": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "2": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "3": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            }
+          }
+        },
+        "MeshGraphNet": {
+          "sources": [
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/meshgraphnet_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/meshgraphnet_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/meshgraphnet_h10.json"
+          ],
+          "model_key": "meshgraphnet_h10",
+          "seeds": [
+            2026,
+            2027,
+            2028
+          ],
+          "runs": [
+            1,
+            2,
+            3
+          ],
+          "parameters": 10043280,
+          "architecture": {
+            "width": 400,
+            "parameters": 10043280
+          },
+          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/temporary_checkpoints/meshgraphnet_h10_best.pt",
+          "field_run_or_seed": 2,
+          "training_by_run": {
+            "1": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "2": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "3": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            }
+          }
+        },
+        "GAT": {
+          "sources": [
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/gat_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/gat_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/gat_h10.json"
+          ],
+          "model_key": "gat_h10",
+          "seeds": [
+            2026,
+            2027,
+            2028
+          ],
+          "runs": [
+            1,
+            2,
+            3
+          ],
+          "parameters": 9992560,
+          "architecture": {
+            "width": 760,
+            "parameters": 9992560
+          },
+          "training_by_run": {
+            "1": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "2": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "3": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            }
+          }
+        },
+        "GATv2": {
+          "sources": [
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/gatv2_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/gatv2_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/gatv2_h10.json"
+          ],
+          "model_key": "gatv2_h10",
+          "seeds": [
+            2026,
+            2027,
+            2028
+          ],
+          "runs": [
+            1,
+            2,
+            3
+          ],
+          "parameters": 9972280,
+          "architecture": {
+            "width": 700,
+            "parameters": 9972280
+          },
+          "training_by_run": {
+            "1": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "2": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "3": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 8,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            }
+          }
+        },
+        "RNN": {
+          "sources": [
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/rnn_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/rnn_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/rnn_h10.json"
+          ],
+          "model_key": "rnn_h10",
+          "seeds": [
+            2026,
+            2027,
+            2028
+          ],
+          "runs": [
+            1,
+            2,
+            3
+          ],
+          "parameters": 9921600,
+          "architecture": {
+            "hidden_size": 784,
+            "parameters": 9921600
+          },
+          "training_by_run": {
+            "1": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "2": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "3": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            }
+          }
+        },
+        "RNN-GNN Fusion": {
+          "sources": [
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/rnn_gnn_fusion_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/rnn_gnn_fusion_h10.json",
+            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/rnn_gnn_fusion_h10.json"
+          ],
+          "model_key": "rnn_gnn_fusion_h10",
+          "seeds": [
+            2026,
+            2027,
+            2028
+          ],
+          "runs": [
+            1,
+            2,
+            3
+          ],
+          "parameters": 9972257,
+          "architecture": {
+            "hidden_size": 768,
+            "parameters": 9972257
+          },
+          "training_by_run": {
+            "1": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "2": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            },
+            "3": {
+              "history": 20,
+              "forecast_horizon": 20,
+              "channels": 4,
+              "n_modes": 128,
+              "target_parameters": 10000000,
+              "epochs": 100,
+              "runs_per_model": 1,
+              "early_stopping_patience": 100,
+              "windows_per_train_trajectory": 2,
+              "windows_per_eval_trajectory": 4,
+              "batch_size": 4,
+              "learning_rate": 0.0001,
+              "warmup_epochs": 5,
+              "warmup_start_factor": 0.1,
+              "min_learning_rate": 2e-05,
+              "weight_decay": 0.0001,
+              "grad_clip_norm": 1.0,
+              "rollout_steps": 180,
+              "seed": 2026
+            }
+          }
+        }
+      },
+      "curves_sha256": "e96603d291c77e27c778071a0d7d4f179caf6e9434b09497350443731bb24a7d"
+    }
+  }
+}

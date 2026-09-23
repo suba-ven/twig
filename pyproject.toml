@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tc-wgno"
-version = "0.1.0"
+version = "0.2.0"
 description = "Temporal-Causal Wavelet Graph Neural Operator reproducibility package"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
 dependencies = [
   "h5py>=3.8", "matplotlib>=3.7", "numpy>=1.24", "pandas>=2.0",
-  "PyWavelets>=1.4", "scipy>=1.10", "torch>=2.1", "torch-geometric>=2.4", "tqdm>=4.65",
+  "tfrecord>=1.14", "PyWavelets>=1.4", "scipy>=1.10", "torch>=2.1", "torch-geometric>=2.4", "tqdm>=4.65",
 ]
 
 [project.optional-dependencies]

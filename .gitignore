@@ -15,3 +15,7 @@ data/downloads/
 results/**/*.pt
 results/**/*.npz
 results/**/*.npy
+
+# Small frozen paper curves are versioned; generated training arrays are not.
+!results/paper/*.npz
+data/airfoil/

@@ -64,3 +64,16 @@ If the helper script cannot be used, the equivalent archive downloads are:
 wget -c https://huggingface.co/datasets/subaven/tc-wgno-benchmark-data/resolve/main/pflotran_paper_data.zip
 wget -c https://huggingface.co/datasets/subaven/tc-wgno-benchmark-data/resolve/main/si_diffusion_paper_data.zip
 ```
+
+## Final three-dataset comparison
+
+The downloader above still contains two datasets. Airfoil must be supplied
+separately: use the original contiguous Airfoil200 TFRecords and `meta.json`
+under `data/airfoil/raw/`, then run `python scripts/preprocess/preprocess_airfoil.py`.
+The selected experiment uses H=20/F=20, all four channels, and 180 rollout steps.
+Do not substitute the later stride-2 or stride-3 data.
+
+The final SI plots forecast 100 states **after** 14 context states. The shortened
+first-100 package is insufficient; pass the full `SI_equation_dataset.npy` to
+the SI training command for a 100-step comparison. Frozen final result curves
+for all three datasets can be plotted without any dataset download.
