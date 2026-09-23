@@ -41,6 +41,8 @@ def main():
     p.add_argument("--coordinates", default="data/si_diffusion/si_diffusion_node_coordinates.csv")
     p.add_argument("--output", default="results/si_diffusion/direct14_paper")
     p.add_argument("--models", nargs="*", help="Defaults to every paper-table model")
+    # Selected SI training seeds: 42, 43, 45 for SwiGLU TC-WGNO;
+    # 42, 43, 44 for every baseline. --seeds overrides either model's defaults.
     p.add_argument("--seeds", type=int, nargs="+", default=None)
     p.add_argument("--allow-short-rollout", action="store_true", help="Explicitly allow shortened data; results will not match the 100-step paper protocol")
     p.add_argument("--epochs", type=int, default=30); p.add_argument("--force", action="store_true")
