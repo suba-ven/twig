@@ -2,7 +2,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-DATASET_BASE_URL="https://huggingface.co/datasets/subaven/tc-wgno-benchmark-data/resolve/main"
+DATASET_BASE_URL="https://huggingface.co/datasets/subaven/twig-benchmark-data/resolve/main"
 DOWNLOAD_DIR="${REPO_ROOT}/data/downloads"
 PFLOTRAN_DIR="${REPO_ROOT}/data/pflotran/raw"
 SI_DIR="${REPO_ROOT}/data/si_diffusion"

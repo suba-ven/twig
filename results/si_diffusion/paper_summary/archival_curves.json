@@ -1,0 +1,6 @@
+{
+  "sha256": "369e1b0627ee50d139dc85120387d55b000672b1c05c1e6ece43480067b6668b",
+  "description": "Historical three-run curves used only for archived plots. Numeric means verified against the retained historical metric tables.",
+  "plot_script": "vis/plot_archival_results.py",
+  "sd_ddof": 0
+}

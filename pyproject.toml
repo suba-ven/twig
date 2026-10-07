@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tc-wgno"
+name = "twig"
 version = "0.2.0"
-description = "Temporal-Causal Wavelet Graph Neural Operator reproducibility package"
+description = "TWIG graph forecasting reproducibility package"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
@@ -16,6 +16,8 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest>=7.4"]
+# Optional legacy interactive plots; not needed for manuscript reproduction.
+visualization = ["plotly>=5", "Jinja2>=3"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

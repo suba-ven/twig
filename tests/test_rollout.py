@@ -1,5 +1,5 @@
 import torch
-from tcwgno.evaluation.rollout import autoregressive_rollout
+from twig.evaluation.rollout import autoregressive_rollout
 
 
 class Repeat(torch.nn.Module):

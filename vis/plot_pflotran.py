@@ -8,12 +8,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import torch
 
-from pflotran_block_dataset_3d_fixed import (
+from twig.pflotran_benchmark.pflotran_block_dataset_3d_fixed import (
     denormalize_channel,
     load_normalized_trajectory,
     stats_from_jsonable,
 )
-from pflotran_h10_training import block_rollout, load_checkpoint_model
+from twig.pflotran_benchmark.pflotran_h10_training import block_rollout, load_checkpoint_model
 
 
 def plot_rollout_curves(

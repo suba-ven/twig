@@ -34,7 +34,7 @@ def main():
                     raise ValueError(f'Invalid curves: {dataset}/{label}')
                 mean, sd = curves.mean(0), curves.std(0, ddof=a.ddof)
                 steps = np.arange(1, len(mean)+1)
-                line, = ax.plot(steps, mean, label=label, lw=1.8 if label == 'TC-WGNO' else 1.1)
+                line, = ax.plot(steps, mean, label=label, lw=1.8 if label == 'TWIG' else 1.1)
                 ax.fill_between(steps, mean-sd, mean+sd, color=line.get_color(), alpha=.1, lw=0)
                 rows.append(dict(dataset=dataset, model=label, parameters=entry['parameters'],
                                  seeds='/'.join(map(str, entry['seeds'])), sd_ddof=a.ddof,

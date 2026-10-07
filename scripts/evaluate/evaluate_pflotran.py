@@ -2,7 +2,7 @@
 import argparse, json
 from pathlib import Path
 import numpy as np
-from tcwgno.evaluation.metrics import rmse
+from twig.evaluation.metrics import rmse
 
 
 def main():

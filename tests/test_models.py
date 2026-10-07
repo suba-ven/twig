@@ -1,5 +1,5 @@
 import torch
-from tcwgno.models.tc_wgno import RNNDirect3D, TimeCausalEncoder
+from twig.models.twig import RNNDirect3D, TimeCausalEncoder
 
 
 def test_rnn_shape():

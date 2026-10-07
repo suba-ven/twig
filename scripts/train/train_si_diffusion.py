@@ -7,14 +7,14 @@ from pathlib import Path
 
 import torch
 
-from tcwgno.si_benchmark.data_direct14 import prepare_direct14_data
-from tcwgno.si_benchmark.direct14_all_models import build_all_direct14_model_specs
-from tcwgno.si_benchmark.direct14_config import Direct14Config, Direct14Paths
-from tcwgno.si_benchmark.direct14_operator_baselines import build_direct14_operator_baseline_specs
-from tcwgno.si_benchmark.direct14_registry import count_parameters, import_graph_wno_block
-from tcwgno.si_benchmark.graph import make_graph_static
-from tcwgno.si_benchmark.swiglu import SWIGLU_NAME, build_swiglu_spec
-from tcwgno.si_benchmark.training_direct14 import aggregate_direct_table, run_direct_family
+from twig.si_benchmark.data_direct14 import prepare_direct14_data
+from twig.si_benchmark.direct14_all_models import build_all_direct14_model_specs
+from twig.si_benchmark.direct14_config import Direct14Config, Direct14Paths
+from twig.si_benchmark.direct14_operator_baselines import build_direct14_operator_baseline_specs
+from twig.si_benchmark.direct14_registry import count_parameters, import_graph_wno_block
+from twig.si_benchmark.graph import make_graph_static
+from twig.si_benchmark.swiglu import SWIGLU_NAME, build_swiglu_spec
+from twig.si_benchmark.training_direct14 import aggregate_direct_table, run_direct_family
 
 
 def build_specs(cfg, paths, device):
@@ -24,7 +24,7 @@ def build_specs(cfg, paths, device):
     base, matched = build_all_direct14_model_specs(
         cfg, graph, modes, eigenvalues, block, device, sa_band_counts=(2, 5)
     )
-    reference = count_parameters(base["SA-TC-WGNO-D14-K2"].factory())
+    reference = count_parameters(base["SA-TWIG-D14-K2"].factory())
     operators, operator_match = build_direct14_operator_baseline_specs(
         cfg, graph, modes, eigenvalues, block, device, target_parameters=reference
     )
@@ -41,7 +41,7 @@ def main():
     p.add_argument("--coordinates", default="data/si_diffusion/si_diffusion_node_coordinates.csv")
     p.add_argument("--output", default="results/si_diffusion/direct14_paper")
     p.add_argument("--models", nargs="*", help="Defaults to every paper-table model")
-    # Selected SI training seeds: 42, 43, 45 for SwiGLU TC-WGNO;
+    # Selected SI training seeds: 42, 43, 45 for SwiGLU TWIG;
     # 42, 43, 44 for every baseline. --seeds overrides either model's defaults.
     p.add_argument("--seeds", type=int, nargs="+", default=None)
     p.add_argument("--allow-short-rollout", action="store_true", help="Explicitly allow shortened data; results will not match the 100-step paper protocol")
@@ -49,7 +49,7 @@ def main():
     args = p.parse_args(); output = Path(args.output); output.mkdir(parents=True, exist_ok=True)
     cfg = replace(Direct14Config(), epochs=args.epochs, early_stopping_patience=10)
     paths = Direct14Paths(data=Path(args.data), edges=Path(args.edges), output=output,
-        models_3d_dir=Path(__file__).resolve().parents[2] / "src/tcwgno/si_benchmark",
+        models_3d_dir=Path(__file__).resolve().parents[2] / "src/twig/si_benchmark",
         coordinate_cache=output / "nuts3_true_coordinates.pt", coordinate_csv=Path(args.coordinates))
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     data, specs, capacity = build_specs(cfg, paths, device)

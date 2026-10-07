@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 from scipy import sparse
 from scipy.sparse.linalg import eigsh
-from tcwgno.airfoil_benchmark import config, prepare
+from twig.airfoil_benchmark import config, prepare
 
 
 def main():

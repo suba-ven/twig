@@ -1,0 +1,91 @@
+{
+  "si_diffusion": {
+    "vmax": 0.2585081458091736,
+    "step": 100,
+    "rmse": {
+      "TWIG": 0.02478075904821182,
+      "Graph FNO": 0.030139855390248122,
+      "GPS Transformer": 0.04064429057004286,
+      "Graph WNO": 0.08182758528976077
+    },
+    "models": [
+      "TWIG",
+      "Graph FNO",
+      "GPS Transformer",
+      "Graph WNO"
+    ],
+    "source_models": [
+      "TWIG",
+      "Graph FNO",
+      "GPS Transformer",
+      "Graph WNO"
+    ],
+    "display_label_mapping": {
+      "TWIG": "TWIG"
+    }
+  },
+  "airfoil": {
+    "stem": "airfoil_top4_final_compact_centered_zoom15_no_rmse_twig",
+    "models": [
+      "GPS Transformer",
+      "TWIG",
+      "MeshGraphNet",
+      "Graph WNO"
+    ],
+    "limits": [
+      1.3126293132613431,
+      1.3126293132613431
+    ],
+    "capped": false,
+    "zoom_factor": 1.15,
+    "xlim": [
+      -2.375,
+      3.375
+    ],
+    "ylim": [
+      -1.4949999999999999,
+      1.4949999999999999
+    ],
+    "figure_height_inches": 2.15,
+    "rmse_annotations": false,
+    "description": "Airfoil: compact, centered, 15% zoom-out, four models"
+  },
+  "pflotran": {
+    "stem": "pflotran_top4_final_pressure_rmse_pa_uncapped_gray_edges_twig",
+    "models": [
+      "TWIG",
+      "GPS Transformer",
+      "GAT",
+      "MeshGraphNet"
+    ],
+    "limits": [
+      3582.5617437663727
+    ],
+    "capped": false,
+    "units": "Pa",
+    "colorbar_label": "Pressure RMSE (Pa)",
+    "edge_color": "#a0a0a0",
+    "edge_width_points": 0.08,
+    "description": "PFLOTRAN: uncapped with thin gray face edges"
+  },
+  "aggregation": "At final rollout step: per_run[node,channel] = sqrt(mean_test_cases(error**2)); plotted = mean_three_runs(per_run). No averaging over spatial nodes or across channels; no prediction ensemble.",
+  "source_export": "final-paper-figures",
+  "geometry_source": "M155_0m0_compressed.h5",
+  "geometry": {
+    "faces": 10819,
+    "nodes": 2500,
+    "represented_nodes": 2500,
+    "mapping": "Original top-cell triangle receives its coarse graph node value, without smoothing or changing RMSE",
+    "projection": "orthographic",
+    "azimuth": -58,
+    "elevation": 24,
+    "vertical_exaggeration": 546.154109586646,
+    "geometry": "Original wedge top faces, top_cell_bin mapping; same graph center and scaling",
+    "triangle_outlines": {
+      "color": "#cccccc",
+      "alpha": 0.65,
+      "linewidth_points": 0.1
+    }
+  },
+  "note": "SI is selected-checkpoint absolute error; Airfoil/PFLOTRAN are mean per-run test RMSE. These are different statistics."
+}

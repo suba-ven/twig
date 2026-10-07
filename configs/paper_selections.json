@@ -6,9 +6,9 @@
       "forecast_horizon": 10,
       "rollout_steps": 60,
       "models": {
-        "TC-WGNO": {
-          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/wavelet_swiglu_raw_sa_tcwno_h10_k5_m128_d10_curves.npy",
-          "model_key": "wavelet_swiglu_raw_sa_tcwno_h10_k5_m128_d10",
+        "TWIG": {
+          "sources": "results/paper/pflotran_curves.npz#TWIG",
+          "model_key": "wavelet_swiglu_raw_sa_twig_h10_k5_m128_d10",
           "seeds": [
             42,
             43,
@@ -26,7 +26,6 @@
             "SwiGLU_multiplier": 1.3333333333333333,
             "dropout": 0.05
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_seed43_44_100epoch_p1m_step60/models/wavelet_swiglu_raw_sa_tcwno_h10_k5_m128_d10_seed43_best.pt",
           "field_run_or_seed": 43,
           "capacity_match": {
             "variant": "wavelet_swiglu",
@@ -46,10 +45,14 @@
                 1000620
               ]
             ]
-          }
+          },
+          "source_path_ids": [
+            "a5d7918b021d331f2b0628bf4df85e36cf6f5cabe12ff79a0e8d5f30347ed836"
+          ],
+          "field_checkpoint_source_id": "eba5eec197f5785d139c96557fd775fded08eefef8413368d7b9534acd2994d5"
         },
         "GPS Transformer": {
-          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/altk_recurrent_three_seed_100epoch_p1m_step60/families/gps_transformer_h10_curves.npy",
+          "sources": "results/paper/pflotran_curves.npz#GPS Transformer",
           "model_key": "gps_transformer_h10",
           "seeds": [
             42,
@@ -62,15 +65,18 @@
             "depth": 3,
             "heads": 4
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/altk_recurrent_three_seed_100epoch_p1m_step60/models/gps_transformer_h10_seed44_best.pt",
           "field_run_or_seed": 44,
           "capacity_match": {
             "width": 176,
             "parameters": 1015191
-          }
+          },
+          "source_path_ids": [
+            "59cc786b3129decff7f0c4f968451358ac12897e9dddbb2f35e5ccbb9119ef12"
+          ],
+          "field_checkpoint_source_id": "88213fae258df61b6e6120e8470942545e87782d8a60abbed59a3664b484a217"
         },
         "Graph FNO": {
-          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/graph_fno_h10_curves.npy",
+          "sources": "results/paper/pflotran_curves.npz#Graph FNO",
           "model_key": "graph_fno_h10",
           "seeds": [
             42,
@@ -81,10 +87,13 @@
           "capacity_match": {
             "width": 28,
             "parameters": 1047724
-          }
+          },
+          "source_path_ids": [
+            "2eae75ffaa31b08aba20b1d806d8365139b1d6435d612a7bb28f29e9e9f3d59b"
+          ]
         },
         "Graph WNO": {
-          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/plain_graph_wno_h10_curves.npy",
+          "sources": "results/paper/pflotran_curves.npz#Graph WNO",
           "model_key": "plain_graph_wno_h10",
           "seeds": [
             42,
@@ -99,15 +108,18 @@
             "modes": 128,
             "dropout": 0.05
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_seed43_44_100epoch_p1m_step60/models/plain_graph_wno_h10_seed44_best.pt",
           "field_run_or_seed": 44,
           "capacity_match": {
             "width": 128,
             "parameters": 1023804
-          }
+          },
+          "source_path_ids": [
+            "ffd0095c4c372fb14f33a1f7660bfe07aea4ea79ecac78fcc7013cff21460cdc"
+          ],
+          "field_checkpoint_source_id": "a139af4b1057295172162a11258de6eec11d00f9dbe6a6cf4e3e233bb8be9b43"
         },
         "MeshGraphNet": {
-          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/meshgraphnet_h10_curves.npy",
+          "sources": "results/paper/pflotran_curves.npz#MeshGraphNet",
           "model_key": "meshgraphnet_h10",
           "seeds": [
             42,
@@ -120,15 +132,18 @@
             "depth": 10,
             "dropout": 0.05
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_seed43_44_100epoch_p1m_step60/models/meshgraphnet_h10_seed43_best.pt",
           "field_run_or_seed": 43,
           "capacity_match": {
             "width": 124,
             "parameters": 976024
-          }
+          },
+          "source_path_ids": [
+            "66f16dad0fa81aa7eeefaabc255bde79d628efc53db45b02992aac11fdb7eb91"
+          ],
+          "field_checkpoint_source_id": "2cec433b812f70d3b9009b3e99b719de3c157d7c662982185dc284efdffd9598"
         },
         "GAT": {
-          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/gat_h10_curves.npy",
+          "sources": "results/paper/pflotran_curves.npz#GAT",
           "model_key": "gat_h10",
           "seeds": [
             42,
@@ -141,15 +156,18 @@
             "depth": 3,
             "heads": 4
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_seed43_44_100epoch_p1m_step60/models/gat_h10_seed44_best.pt",
           "field_run_or_seed": 44,
           "capacity_match": {
             "width": 240,
             "parameters": 1003940
-          }
+          },
+          "source_path_ids": [
+            "6cfec00da94ffb05b7d53af9eeefdad32f5e6f3529e66f8eb553d6c2d5e69d4f"
+          ],
+          "field_checkpoint_source_id": "b27ff2905222a2804bf56a07a259aee53464e163659993f2aa86aa67174760bb"
         },
         "GATv2": {
-          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/core_models_three_seed_100epoch_p1m_step60/families/gatv2_h10_curves.npy",
+          "sources": "results/paper/pflotran_curves.npz#GATv2",
           "model_key": "gatv2_h10",
           "seeds": [
             42,
@@ -160,10 +178,13 @@
           "capacity_match": {
             "width": 220,
             "parameters": 994640
-          }
+          },
+          "source_path_ids": [
+            "a0cb7a43dcb083ea351a527be199669d155681dccf0c3beb9074b1fcb610c6a8"
+          ]
         },
         "RNN": {
-          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/altk_recurrent_three_seed_100epoch_p1m_step60/families/rnn_h10_curves.npy",
+          "sources": "results/paper/pflotran_curves.npz#RNN",
           "model_key": "rnn_h10",
           "seeds": [
             42,
@@ -174,10 +195,13 @@
           "capacity_match": {
             "hidden_size": 248,
             "parameters": 995244
-          }
+          },
+          "source_path_ids": [
+            "23ec2eb727566fa58ccbad0e15a1e68b1a2b1e73b000b4c5560a59598a8933f6"
+          ]
         },
         "RNN-GNN Fusion": {
-          "sources": "/home/users/subaven/3d-gnns/pflotran_3d/h10-benchmarks/pflotran_h10_benchmark_runs/altk_recurrent_three_seed_100epoch_p1m_step60/families/rnn_gnn_fusion_h10_curves.npy",
+          "sources": "results/paper/pflotran_curves.npz#RNN-GNN Fusion",
           "model_key": "rnn_gnn_fusion_h10",
           "seeds": [
             42,
@@ -188,19 +212,22 @@
           "capacity_match": {
             "hidden_size": 240,
             "parameters": 973601
-          }
+          },
+          "source_path_ids": [
+            "1d7bc9db8555960b9b50c9ec5646fda64f810a106dfed5a6518e9b38a78c91a0"
+          ]
         }
       },
-      "curves_sha256": "f66e69306940ff3f9125ea4a2e77b06128ec7bf628b3a2093a3e5f65a4d28bfb"
+      "curves_sha256": "39975b74b7c5aef58dfb4948b87fe0ddf5575fb47b98f3510b6665306e6be15d"
     },
     "si_diffusion": {
       "history": 14,
       "forecast_horizon": 14,
       "rollout_steps": 100,
       "models": {
-        "TC-WGNO": {
-          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/si_direct14_swiglu_four_model_30epoch_1seed/statistics/k5_paper_curves_seeds_42_43_45.npz",
-          "model_key": "SwiGLU-TC-WGNO-D14-K5-H133",
+        "TWIG": {
+          "sources": "results/paper/si_diffusion_curves.npz#TWIG",
+          "model_key": "SwiGLU-TWIG-D14-K5-H133",
           "seeds": [
             42,
             43,
@@ -215,10 +242,9 @@
             "modes": 64,
             "SwiGLU_multiplier": 1.3333333333333333
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/si_direct14_swiglu_four_model_30epoch_1seed/models/swiglu_tc_wgno_d14_k5_h133_best.pt",
           "field_run_or_seed": 42,
           "factory_metadata": {
-            "family": "TC-WGNO-SwiGLU",
+            "family": "TWIG-SwiGLU",
             "history": 14,
             "forecast_horizon": 14,
             "temporal_bands": 5,
@@ -228,11 +254,15 @@
             "training_mode": "direct_14_to_14",
             "channel_mixer": "SwiGLU",
             "swiglu_hidden_mult": 1.3333333333333333,
-            "matched_base": "SA-TC-WGNO-D14-K5"
-          }
+            "matched_base": "SA-TWIG-D14-K5"
+          },
+          "source_path_ids": [
+            "5c9186db05c3a971896b79bb8a0cf2c41f025a3c2597bc513c38f990e17508f9"
+          ],
+          "field_checkpoint_source_id": "3a4cf60536377b51d71b0aa2e83ad895d52c732ce181e980176b37cc06d80a80"
         },
         "GPS Transformer": {
-          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/gps_transformer_d14_rollout_curves.npy",
+          "sources": "results/paper/si_diffusion_curves.npz#GPS Transformer",
           "model_key": "GPS-Transformer-D14",
           "seeds": [
             42,
@@ -245,19 +275,22 @@
             "depth": 3,
             "heads": 4
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/models/gps_transformer_d14_best.pt",
           "field_run_or_seed": 43,
           "factory_metadata": {
             "family": "GPS-Transformer",
             "history": 14,
             "forecast_horizon": 14,
             "width": 44,
-            "matched_to": "SA-TC-WGNO-D14-K2",
+            "matched_to": "SA-TWIG-D14-K2",
             "training_mode": "direct_14_to_14"
-          }
+          },
+          "source_path_ids": [
+            "eff11c2d6a3b357fd1f42536784c552600c7249a1c32db41ea7a10d7b12638d2"
+          ],
+          "field_checkpoint_source_id": "eb649515a819b16ab8f7819716f9c913b04d2a0ce53aebc1a93533b3bb0dd778"
         },
         "Graph FNO": {
-          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/artifacts/direct14_operator_baselines/statistics/graphfno_d14_rollout_curves.npy",
+          "sources": "results/paper/si_diffusion_curves.npz#Graph FNO",
           "model_key": "GraphFNO-D14",
           "seeds": [
             42,
@@ -270,7 +303,6 @@
             "depth": 10,
             "modes": 64
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/artifacts/direct14_operator_baselines/models/graphfno_d14_best.pt",
           "field_run_or_seed": 44,
           "factory_metadata": {
             "family": "GraphFNO",
@@ -282,10 +314,14 @@
             "training_mode": "direct_14_to_14",
             "temporal_encoding": "raw_history_only",
             "matched_target_parameters": 70224
-          }
+          },
+          "source_path_ids": [
+            "b04ba80a38908cb4a5795ff767ed3e58080f5e5b14bb2318b73decb19f07e75c"
+          ],
+          "field_checkpoint_source_id": "731499774ce6c8ab2ee4e3cde0902b3fdd60ce4f2dfa7fb33f3235dc9ae61abc"
         },
         "Graph WNO": {
-          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/artifacts/direct14_operator_baselines/statistics/gwno_d14_rollout_curves.npy",
+          "sources": "results/paper/si_diffusion_curves.npz#Graph WNO",
           "model_key": "GWNO-D14",
           "seeds": [
             42,
@@ -299,7 +335,6 @@
             "S": 4,
             "modes": 64
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/artifacts/direct14_operator_baselines/models/gwno_d14_best.pt",
           "field_run_or_seed": 44,
           "factory_metadata": {
             "family": "GWNO",
@@ -311,10 +346,14 @@
             "training_mode": "direct_14_to_14",
             "temporal_encoding": "raw_history_only",
             "matched_target_parameters": 70224
-          }
+          },
+          "source_path_ids": [
+            "cc9d588b972ecc2943a4f1d3d30f73c21f50817366f31008dfdc24b63374c966"
+          ],
+          "field_checkpoint_source_id": "7aae95acebd8d89591b9a36cb1d1421fbbd9af6749040e0272e8a0db081f34d4"
         },
         "MeshGraphNet": {
-          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/meshgraphnet_d14_rollout_curves.npy",
+          "sources": "results/paper/si_diffusion_curves.npz#MeshGraphNet",
           "model_key": "MeshGraphNet-D14",
           "seeds": [
             42,
@@ -326,7 +365,6 @@
             "width": 44,
             "processor_steps": 3
           },
-          "field_checkpoint": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/models/meshgraphnet_d14_best.pt",
           "field_run_or_seed": 43,
           "factory_metadata": {
             "family": "MeshGraphNet",
@@ -334,12 +372,16 @@
             "forecast_horizon": 14,
             "width": 44,
             "processor_steps": 3,
-            "matched_to": "SA-TC-WGNO-D14-K2",
+            "matched_to": "SA-TWIG-D14-K2",
             "training_mode": "direct_14_to_14"
-          }
+          },
+          "source_path_ids": [
+            "916c97450b177c279da6a66f70e076f9bc759057064fab36ab3459202f7bfbff"
+          ],
+          "field_checkpoint_source_id": "07e727fcaf2e296d91fcd61b10dc77e42766c0c9d0429045ca88374cc6635adc"
         },
         "GAT": {
-          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/gat_d14_rollout_curves.npy",
+          "sources": "results/paper/si_diffusion_curves.npz#GAT",
           "model_key": "GAT-D14",
           "seeds": [
             42,
@@ -352,12 +394,15 @@
             "history": 14,
             "forecast_horizon": 14,
             "width": 60,
-            "matched_to": "SA-TC-WGNO-D14-K2",
+            "matched_to": "SA-TWIG-D14-K2",
             "training_mode": "direct_14_to_14"
-          }
+          },
+          "source_path_ids": [
+            "d46b4959264c26802253c6537febf8f3ac01ed3f05e848a4ee1eadc0b3c4a422"
+          ]
         },
         "GATv2": {
-          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/gatv2_d14_rollout_curves.npy",
+          "sources": "results/paper/si_diffusion_curves.npz#GATv2",
           "model_key": "GATv2-D14",
           "seeds": [
             42,
@@ -370,12 +415,15 @@
             "history": 14,
             "forecast_horizon": 14,
             "width": 56,
-            "matched_to": "SA-TC-WGNO-D14-K2",
+            "matched_to": "SA-TWIG-D14-K2",
             "training_mode": "direct_14_to_14"
-          }
+          },
+          "source_path_ids": [
+            "6306eaae5f47bd2963500c2939a08d53173f3a973dd9395ae63ac0726e4ad328"
+          ]
         },
         "RNN": {
-          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/rnn_d14_rollout_curves.npy",
+          "sources": "results/paper/si_diffusion_curves.npz#RNN",
           "model_key": "RNN-D14",
           "seeds": [
             42,
@@ -388,12 +436,15 @@
             "history": 14,
             "forecast_horizon": 14,
             "width": 64,
-            "matched_to": "SA-TC-WGNO-D14-K2",
+            "matched_to": "SA-TWIG-D14-K2",
             "training_mode": "direct_14_to_14"
-          }
+          },
+          "source_path_ids": [
+            "3df27e9271e1b87210598f3b951a4b8e18b03f6ab0d744adb5b9b8b0d7de4e9e"
+          ]
         },
         "RNN-GNN Fusion": {
-          "sources": "/home/users/subaven/3d-gnns/SI-Diffusion/direct14_all_models_patience10/statistics/rnn_gnn_fusion_d14_rollout_curves.npy",
+          "sources": "results/paper/si_diffusion_curves.npz#RNN-GNN Fusion",
           "model_key": "RNN-GNN-Fusion-D14",
           "seeds": [
             42,
@@ -406,25 +457,24 @@
             "history": 14,
             "forecast_horizon": 14,
             "width": 64,
-            "matched_to": "SA-TC-WGNO-D14-K2",
+            "matched_to": "SA-TWIG-D14-K2",
             "training_mode": "direct_14_to_14"
-          }
+          },
+          "source_path_ids": [
+            "55d7d1da5b70ee939e21bc8c1faf6bb54221ca1accc55c13406e6f9709ab9183"
+          ]
         }
       },
-      "curves_sha256": "bafbc0aeafc9976dea6f793f6eb5c87c6bac84b184efdb9923bdc4da1e1ccf6d"
+      "curves_sha256": "dc99bb810bc7b6bb140809a3f635733831de4292b1d5c259ae65e270d2d03998"
     },
     "airfoil": {
       "history": 20,
       "forecast_horizon": 20,
       "rollout_steps": 180,
       "models": {
-        "TC-WGNO": {
-          "sources": [
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/paper_tc_wgno_s12.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/paper_tc_wgno_s12.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/paper_tc_wgno_s12.json"
-          ],
-          "model_key": "paper_tc_wgno_s12",
+        "TWIG": {
+          "sources": "results/paper/airfoil_curves.npz#TWIG",
+          "model_key": "paper_twig_s12",
           "seeds": [
             2026,
             2027,
@@ -447,7 +497,6 @@
             "full_scale_transforms": true,
             "enhanced_input": false
           },
-          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/temporary_checkpoints/paper_tc_wgno_s12_best.pt",
           "field_run_or_seed": 1,
           "training_by_run": {
             "1": {
@@ -513,14 +562,16 @@
               "rollout_steps": 180,
               "seed": 2026
             }
-          }
+          },
+          "source_path_ids": [
+            "d9052a63194e95bd008b62c300b752583022b1ee94515877e0df9afdd7e4926c",
+            "82177d2cc5b888ae9bc9d3770931ca0f9edc39dfb0422bc4c508d40cab42aa8c",
+            "10f5e42af35d2051942da13e2874cd91a0a946f5afc3fc7eeb4280db9c023d73"
+          ],
+          "field_checkpoint_source_id": "256dfe2debe041cafc9802125335af313b0060815b8125c2d3c96e7935fa921a"
         },
         "GPS Transformer": {
-          "sources": [
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_gps_d6h6_10m/runs/run_01/records/gps_transformer_h20_f20_depth6_heads6.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_gps_d6h6_10m/runs/run_03/records/gps_transformer_h20_f20_depth6_heads6.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_gps_d6h6_10m/runs/run_05/records/gps_transformer_h20_f20_depth6_heads6.json"
-          ],
+          "sources": "results/paper/airfoil_curves.npz#GPS Transformer",
           "model_key": "gps_transformer_h20_f20_depth6_heads6",
           "seeds": [
             2026,
@@ -540,7 +591,6 @@
             "heads": 6
           },
           "selection": "Frozen runs 01,03,05: three largest saved mean rollout RMSEs among seven completed runs; do not rerank new runs.",
-          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_gps_d6h6_10m/runs/run_03/temporary_checkpoints/gps_transformer_h20_f20_depth6_heads6_best.pt",
           "field_run_or_seed": 3,
           "training_by_run": {
             "1": {
@@ -606,14 +656,16 @@
               "rollout_steps": 180,
               "seed": 2026
             }
-          }
+          },
+          "source_path_ids": [
+            "0917f08079e6211f2df31ff07be6b91a93243013bb187f2848f6b445c22bd9aa",
+            "17da51ab4cc7fa9792b190a06e901d16f4816fd8be4fb10fd956708cf4d3c6e1",
+            "3f6ff83e5de4f196355bfb330aa64fcf31bdae263d2832cbf055bcd185eeb932"
+          ],
+          "field_checkpoint_source_id": "b4c0567abf28d6b234376a2920a9f3badb343e21e00a01f423d5e53e01714be9"
         },
         "Graph FNO": {
-          "sources": [
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_graphfno_depth14_width64_modes169_10m/runs/run_01/records/graph_fno_h20_f20_depth14_width64_modes169.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_graphfno_depth14_width64_modes169_10m/runs/run_02/records/graph_fno_h20_f20_depth14_width64_modes169.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_graphfno_depth14_width64_modes169_10m/runs/run_03/records/graph_fno_h20_f20_depth14_width64_modes169.json"
-          ],
+          "sources": "results/paper/airfoil_curves.npz#Graph FNO",
           "model_key": "graph_fno_h20_f20_depth14_width64_modes169",
           "seeds": [
             2026,
@@ -633,7 +685,6 @@
             "dropout": 0.05,
             "parameters": 10001680
           },
-          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_h20_f20_graphfno_depth14_width64_modes169_10m/runs/run_01/temporary_checkpoints/graph_fno_h20_f20_depth14_width64_modes169_best.pt",
           "field_run_or_seed": 1,
           "training_by_run": {
             "1": {
@@ -699,14 +750,16 @@
               "rollout_steps": 180,
               "seed": 2026
             }
-          }
+          },
+          "source_path_ids": [
+            "1dcf89093ab32131a0d4180cc59104550516d0bba272e1bceaa4f9449f0c1d2e",
+            "ffe8a7f81c7268afa0c9e34131f01612b8929bed4cd8c7b4f17af6e95a7a889f",
+            "cddf4511b6d1c29c95198ccb57a8c9c7fc8dd533d7852c1c22d08c4f0ccfc841"
+          ],
+          "field_checkpoint_source_id": "d0972dc8ff80f86fb0720427f833489710a02a5abf7f7c075dd5ce00610df559"
         },
         "Graph WNO": {
-          "sources": [
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/plain_graph_wno_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/plain_graph_wno_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/plain_graph_wno_h10.json"
-          ],
+          "sources": "results/paper/airfoil_curves.npz#Graph WNO",
           "model_key": "plain_graph_wno_h10",
           "seeds": [
             2026,
@@ -723,7 +776,6 @@
             "width": 428,
             "parameters": 10025164
           },
-          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/temporary_checkpoints/plain_graph_wno_h10_best.pt",
           "field_run_or_seed": 2,
           "training_by_run": {
             "1": {
@@ -789,14 +841,16 @@
               "rollout_steps": 180,
               "seed": 2026
             }
-          }
+          },
+          "source_path_ids": [
+            "aa84d0fcf0106f578511f5fe2bfee7f42c9207a966edbf604d1d65a64ad4cd0a",
+            "c693eff06c939a256524e91479afa551fc0360e1ab584bfba4e9e1b07f8d5e84",
+            "72cf2360a7a2e35ca985929e3d3fdcb0576c4974500937ea73b196960f3a1ffd"
+          ],
+          "field_checkpoint_source_id": "825e8fb2ce3cfd381f56478a71601550991b366a3a1d5195165029c398ba58aa"
         },
         "MeshGraphNet": {
-          "sources": [
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/meshgraphnet_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/meshgraphnet_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/meshgraphnet_h10.json"
-          ],
+          "sources": "results/paper/airfoil_curves.npz#MeshGraphNet",
           "model_key": "meshgraphnet_h10",
           "seeds": [
             2026,
@@ -813,7 +867,6 @@
             "width": 400,
             "parameters": 10043280
           },
-          "field_checkpoint": "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/temporary_checkpoints/meshgraphnet_h10_best.pt",
           "field_run_or_seed": 2,
           "training_by_run": {
             "1": {
@@ -879,14 +932,16 @@
               "rollout_steps": 180,
               "seed": 2026
             }
-          }
+          },
+          "source_path_ids": [
+            "bcda8333ab8e5aab08dfc617ec68d0f48eb45785ab23a035ccc3a21af1e0b195",
+            "6baa66508a36106adde3b2e04d9997d41dd6317cfe743926f0a3bbd47cabb40e",
+            "d6335ef135fdfdfb489170223b55df5e7dd615b3943a2c02597f6e23b8b88f5a"
+          ],
+          "field_checkpoint_source_id": "8788341edac1902e0cd99baca234f90eb6d8885f3d5189bb371bb668f7b10138"
         },
         "GAT": {
-          "sources": [
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/gat_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/gat_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/gat_h10.json"
-          ],
+          "sources": "results/paper/airfoil_curves.npz#GAT",
           "model_key": "gat_h10",
           "seeds": [
             2026,
@@ -967,14 +1022,15 @@
               "rollout_steps": 180,
               "seed": 2026
             }
-          }
+          },
+          "source_path_ids": [
+            "14b58d18865ce808568a8c6c670f5f2eec4efa601b51c378bd6a86f02ed16561",
+            "8aeaec0792b8f07e48885c0f13ff47c5a37cf820b0fd01f5c71b6c840b2b4cf7",
+            "87cb0e36584405f9a288697516304f57a4e608aea5ab9c9631d677e0637801e0"
+          ]
         },
         "GATv2": {
-          "sources": [
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/gatv2_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/gatv2_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/gatv2_h10.json"
-          ],
+          "sources": "results/paper/airfoil_curves.npz#GATv2",
           "model_key": "gatv2_h10",
           "seeds": [
             2026,
@@ -1055,14 +1111,15 @@
               "rollout_steps": 180,
               "seed": 2026
             }
-          }
+          },
+          "source_path_ids": [
+            "350575b178ea9030b42d2078d217ef5405d8280d6d3a498a8e1aac0c79610752",
+            "8f26243ae830d8c9d19edfbae2a97bdc018891d152cde76dd06c7dd0867b10e7",
+            "093b8b0c5b49f2ccb558c333dbb5666da39321a109956d3881371b86535446f6"
+          ]
         },
         "RNN": {
-          "sources": [
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/rnn_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/rnn_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/rnn_h10.json"
-          ],
+          "sources": "results/paper/airfoil_curves.npz#RNN",
           "model_key": "rnn_h10",
           "seeds": [
             2026,
@@ -1143,14 +1200,15 @@
               "rollout_steps": 180,
               "seed": 2026
             }
-          }
+          },
+          "source_path_ids": [
+            "801f1a00bc0a3e03fbc8e5031e82452021e6eecf0f62aa11694ca6d327fcdec0",
+            "b81ec6a1ff824f6499ae5918097262c873bb27a0f4ab0a477775d19fb01ba23e",
+            "43df45bd6ff264e4f1f02c18569782f106311d386ca3cbaaa49c7cf30ca7af4d"
+          ]
         },
         "RNN-GNN Fusion": {
-          "sources": [
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_01/records/rnn_gnn_fusion_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_02/records/rnn_gnn_fusion_h10.json",
-            "/home/groups/dtartako/AirFoil_Experiments/AirFoil200_runs_final_h20_f20_scale_ablation/runs/run_03/records/rnn_gnn_fusion_h10.json"
-          ],
+          "sources": "results/paper/airfoil_curves.npz#RNN-GNN Fusion",
           "model_key": "rnn_gnn_fusion_h10",
           "seeds": [
             2026,
@@ -1231,10 +1289,16 @@
               "rollout_steps": 180,
               "seed": 2026
             }
-          }
+          },
+          "source_path_ids": [
+            "29c72c245e55405faa43de99e85b952df8191026bd0f0f5e68853863c60da1a6",
+            "59f4823beffa5e032154bc5382391f27358a11f70e56b0650eb08d365ee93f9e",
+            "496fd1bfb4062f6fc7bd1a412ffd231a3449caa7b9e7e37b79fac1fc903380bf"
+          ]
         }
       },
-      "curves_sha256": "e96603d291c77e27c778071a0d7d4f179caf6e9434b09497350443731bb24a7d"
+      "curves_sha256": "6c3fa71933c5999d9bfe26b93c304370e32820bedb4884f4275b7d5c2af3a743"
     }
-  }
+  },
+  "provenance_note": "Source IDs are SHA256 hashes of original cluster path strings, not file contents. Frozen curves are bundled; original checkpoints are not distributed."
 }

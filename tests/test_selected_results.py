@@ -25,7 +25,7 @@ def test_frozen_curves(dataset, steps):
 
 
 def test_special_selections():
-    si = SELECTIONS['si_diffusion']['models']['TC-WGNO']
+    si = SELECTIONS['si_diffusion']['models']['TWIG']
     assert si['seeds'] == [42,43,45]
     assert si['parameters'] == 70233
     air = SELECTIONS['airfoil']['models']
@@ -33,16 +33,16 @@ def test_special_selections():
     assert air['GPS Transformer']['seeds'] == [2026,2028,2030]
     assert air['Graph FNO']['architecture']['n_modes'] == 169
     assert air['Graph FNO']['parameters'] == 10001680
-    assert SELECTIONS['pflotran']['models']['TC-WGNO']['parameters'] == 1000620
+    assert SELECTIONS['pflotran']['models']['TWIG']['parameters'] == 1000620
 
 
 def test_si_selected_swiglu_capacity():
     import torch
-    from tcwgno.si_benchmark.direct14_config import Direct14Config
-    from tcwgno.si_benchmark.direct14_registry import build_direct14_model_specs, count_parameters
-    from tcwgno.si_benchmark.graph import make_graph_static
-    from tcwgno.si_benchmark.graph_wno_reference import GraphWNOBlock3D
-    from tcwgno.si_benchmark.swiglu import build_swiglu_spec
+    from twig.si_benchmark.direct14_config import Direct14Config
+    from twig.si_benchmark.direct14_registry import build_direct14_model_specs, count_parameters
+    from twig.si_benchmark.graph import make_graph_static
+    from twig.si_benchmark.graph_wno_reference import GraphWNOBlock3D
+    from twig.si_benchmark.swiglu import build_swiglu_spec
     n = 70
     graph = make_graph_static(torch.zeros(n,42), torch.zeros(n,2),
                               torch.stack([torch.arange(n),torch.arange(n).roll(1)]), torch.ones(n))
@@ -54,13 +54,13 @@ def test_si_selected_swiglu_capacity():
 
 
 def test_current_registry_matches_selections():
-    from tcwgno.utils.model_registry import PFLOTRAN_MODELS, SI_MODELS
+    from twig.utils.model_registry import PFLOTRAN_MODELS, SI_MODELS
     for dataset, names in [('pflotran', PFLOTRAN_MODELS), ('si_diffusion', SI_MODELS)]:
         assert set(names) == {entry['model_key'] for entry in SELECTIONS[dataset]['models'].values()}
 
 
 def test_airfoil_rejects_stride3_with_same_number_of_states(tmp_path):
-    from tcwgno.airfoil_benchmark.data import load_meta
+    from twig.airfoil_benchmark.data import load_meta
     (tmp_path/'meta.json').write_text(json.dumps({'trajectory_length':200, 'temporal_subsampling':{'stride':3}}))
     with pytest.raises(ValueError, match='contiguous'):
         load_meta(tmp_path)

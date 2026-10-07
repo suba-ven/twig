@@ -97,7 +97,7 @@
     "history": 14,
     "forecast_horizon": 14,
     "width": 44,
-    "matched_to": "SA-TC-WGNO-D14-K2",
+    "matched_to": "SA-TWIG-D14-K2",
     "training_mode": "direct_14_to_14"
   },
   {
@@ -198,7 +198,7 @@
     "history": 14,
     "forecast_horizon": 14,
     "width": 44,
-    "matched_to": "SA-TC-WGNO-D14-K2",
+    "matched_to": "SA-TWIG-D14-K2",
     "training_mode": "direct_14_to_14"
   },
   {
@@ -299,7 +299,7 @@
     "history": 14,
     "forecast_horizon": 14,
     "width": 44,
-    "matched_to": "SA-TC-WGNO-D14-K2",
+    "matched_to": "SA-TWIG-D14-K2",
     "training_mode": "direct_14_to_14"
   }
 ]

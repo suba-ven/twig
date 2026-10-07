@@ -1,8 +1,8 @@
 import csv
 from pathlib import Path
 
-from tcwgno.si_benchmark.direct14_config import Direct14Config
-from tcwgno.utils.model_registry import LEGACY_SI_MODELS
+from twig.si_benchmark.direct14_config import Direct14Config
+from twig.utils.model_registry import LEGACY_SI_MODELS
 
 
 def test_si_direct14_protocol():
@@ -18,5 +18,5 @@ def test_legacy_si_models_are_capacity_matched():
         rows = list(csv.DictReader(handle))
     observed = {row["Model key"]: int(row["Parameters"]) for row in rows}
     assert set(LEGACY_SI_MODELS) == set(observed)
-    assert observed["SA-TC-WGNO-D14-K2"] == 70_224
+    assert observed["SA-TWIG-D14-K2"] == 70_224
     assert all(abs(parameters - 70_224) / 70_224 < 0.09 for parameters in observed.values())

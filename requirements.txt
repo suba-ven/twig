@@ -1,3 +1,5 @@
+# Runtime and test dependencies; matches pyproject.toml plus the test extra.
+# Optional legacy plots/tables: pip install -e '.[visualization]'
 h5py>=3.8
 matplotlib>=3.7
 numpy>=1.24

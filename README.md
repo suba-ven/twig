@@ -1,7 +1,7 @@
 # TWIG: three-dataset reproducibility package
 
-Code and selected experiment results for the temporal wavelet graph operator
-(labelled **TC-WGNO** in the saved experiments), covering **PFLOTRAN,
+Code and selected experiment results for **TWIG**, the temporal wavelet graph
+operator, covering **PFLOTRAN,
 SI diffusion, and Airfoil**. The default training commands now follow the final
 nine-model comparisons.
 
@@ -13,14 +13,85 @@ source .venv/bin/activate
 pip install -e '.[test]'
 ```
 
+The package is imported as `twig` (for example, `from twig.models import SATWIG3D`).
+Reinstall the editable package after updating an existing checkout.
+
 Run commands from the repository root. PyTorch Geometric must match your
 PyTorch/CUDA installation. Airfoil uses TFRecord files and the `tfrecord` package.
+
+## Reproduce the paper
+
+From the repository root, with Python 3.10 or newer:
+
+```bash
+pip install -e .
+bash scripts/download_data.sh
+bash scripts/reproduce_paper.sh
+```
+
+The data download is optional for this default workflow: it regenerates the
+manuscript figures and tables from the frozen results in `results/paper/`,
+using `configs/paper_selections.json`. It performs no training or checkpoint
+inference and needs no GPU or network access after dependencies are installed.
+PFLOTRAN and SI diffusion downloads are hosted on
+[Hugging Face](https://huggingface.co/datasets/subaven/twig-benchmark-data).
+See [data/README.md](data/README.md) for downloads and preprocessing when
+running new experiments. Bash, `wget`, and `unzip` are needed for downloading.
+
+Outputs go to `./results/codeocean/` locally, or an explicit directory:
+
+```bash
+RESULTS_DIR=/path/to/output bash scripts/reproduce_paper.sh
+```
+
+The output includes `tables/manuscript_summary.csv` and `.tex` (27 selections),
+the noise summary, extended-data plots, input checksums, package versions, and
+all five manuscript figures under `figures/`:
+
+- `pflotran-noise-robustness-twig.png`
+- `si_diffusion_top4_errors_blue_twig.png`
+- `figure_2_rollouts_three_datasets_pflotran_zoom_twig.pdf`
+- `pflotran_top4_final_pressure_rmse_pa_uncapped_gray_edges_twig.png`
+- `airfoil_top4_final_compact_centered_zoom15_no_rmse_twig.png`
+
+Figures are rendered anew from compact numeric inputs. The exact original
+exports in `figures/paper/` are for comparison and are never read by the run.
+PDF/PNG rendering can vary slightly with Matplotlib and font versions.
+Table SD uses ddof=0 for SI and ddof=1 for PFLOTRAN/Airfoil; rollout shading
+uses ddof=1. The SI spatial figure shows selected-checkpoint absolute error;
+the PFLOTRAN/Airfoil spatial figures show mean per-run test RMSE.
+
+## Code Ocean
+
+Import this repository into the capsule's `/code` directory and configure the
+executable root `run` as its entry point. Pressing **Run** invokes this script.
+Keep `src/`, `configs/`, `scripts/`, `vis/`, and `tests/` in their current locations,
+including the frozen inputs in `/code/results/paper/`.
+
+In the capsule environment build, select Python 3.10+ and install the packages
+in `requirements.txt` (plus setuptools>=68 and wheel for editable installation).
+The normal local setup `pip install -e .` also installs runtime dependencies.
+The root script uses the checked-out `src/` package via `PYTHONPATH`, so it
+requires no package installation or internet access at Run time.
+No CUDA runtime is needed for the default frozen-results workflow.
+
+Generated outputs use `${RESULTS_DIR:-/results}` when the capsule's `/results`
+mount exists. Outside a capsule, absence of that mount selects
+`./results/codeocean/`. An explicit `RESULTS_DIR` always takes precedence;
+permission errors on an existing mount fail rather than silently redirecting.
+`PYTHON=/path/to/python ./run` selects an interpreter if needed.
+
+A lightweight integration check (no pytest installation required) is:
+
+```bash
+python tests/test_reproduction.py
+```
 
 ## Selected experiments
 
 [configs/paper_selections.json](configs/paper_selections.json) records all 27
-model/dataset selections, parameter counts, source provenance, selected
-field checkpoints, and Airfoil's per-run training settings.
+model/dataset selections, parameter counts, hashed provenance identifiers,
+selected field runs, and Airfoil's per-run training settings.
 
 | Dataset | Context / direct forecast | Rollout | TWIG |
 |---|---|---|---|
@@ -55,8 +126,9 @@ python vis/plot_selected_results.py --dataset si_diffusion --ddof 0
 This writes PDF/PNG curves and a CSV summary under `figures/selected/`.
 `--ddof 1` is the default and matches the extended-data figures. Original
 exports are available as `figures/<dataset>/selected_nine_models.{pdf,png}`.
-Paths in the selection manifest describe the original experiment provenance;
-the plotting command reads the bundled arrays.
+The selection manifest points to bundled arrays. Source-path identifiers are
+SHA256 hashes of original cluster path strings; they are provenance markers,
+not download URLs or file-content checksums. Original checkpoints are not bundled.
 
 ## Data and training
 
@@ -74,8 +146,9 @@ reproduce the final 100-step comparison. Supply the full original SI array for
 the reported horizon. Edges and coordinates default to the downloaded files.
 
 Airfoil data is not included in the existing two-dataset download. Place the
-original Airfoil200 `meta.json`, `train.tfrecord`, `valid.tfrecord`, and
-`test.tfrecord` in `data/airfoil/raw/`, then run:
+prepared Airfoil200 `meta.json`, `train.tfrecord`, `valid.tfrecord`, and
+`test.tfrecord` in `data/airfoil/raw/` using the download and 601-to-200-state
+conversion commands in [data/README.md](data/README.md), then run:
 
 ```bash
 python scripts/preprocess/preprocess_airfoil.py
@@ -96,8 +169,8 @@ does not overwrite the bundled paper arrays.
 ## Source and verification
 
 The final PFLOTRAN and Airfoil implementations live in
-`src/tcwgno/pflotran_benchmark/` and `src/tcwgno/airfoil_benchmark/`.
-SI uses `src/tcwgno/si_benchmark/`, with the selected K=5 SwiGLU factory.
+`src/twig/pflotran_benchmark/` and `src/twig/airfoil_benchmark/`.
+SI uses `src/twig/si_benchmark/`, with the selected K=5 SwiGLU factory.
 The earlier 500k PFLOTRAN / K=6 SI source and historical tables remain available
 for reference; `results/*/paper_summary/` and older unprefixed figures describe
 that earlier release. Use `results/paper/` for current selections.

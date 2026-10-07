@@ -1,0 +1,7 @@
+{
+  "si_paper_fields.npz": "4c21c2476c88f98ada56ce2cc1f8586e01ba3b4e219bff8bbdfb0af680349d3e",
+  "airfoil_paper_fields.npz": "96bd9267e8258bf04ee823444fad0c31982107e108f2e8f4cd74f2be873b76d1",
+  "pflotran_paper_fields.npz": "b99e95bce79340919762507564d53ecbfe84cd1f15ea8443de53b165990bb755",
+  "paper_plot_metadata.json": "29fd89843c150d18901e6b19518bdf008c3d87fabebb598dc180917e1efc80e6",
+  "pflotran_noise_summary.csv": "e85d1e49c1d4cb4a5359a6933068f0b2204875833af918d47978e8bc1a48f316"
+}

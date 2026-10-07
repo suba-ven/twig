@@ -4,9 +4,9 @@ import argparse
 from dataclasses import replace
 import json
 from pathlib import Path
-from tcwgno.airfoil_benchmark import config, registry, training
-from tcwgno.airfoil_benchmark.paper import build_paper_specs
-from tcwgno.airfoil_benchmark.data import load_meta
+from twig.airfoil_benchmark import config, registry, training
+from twig.airfoil_benchmark.paper import build_paper_specs
+from twig.airfoil_benchmark.data import load_meta
 
 
 def main():
@@ -14,7 +14,7 @@ def main():
     p.add_argument('--data', type=Path, default=Path('data/airfoil/raw'))
     p.add_argument('--artifacts', type=Path, default=Path('data/airfoil/artifacts'))
     p.add_argument('--output', type=Path, default=Path('results/airfoil/selected'))
-    p.add_argument('--models', nargs='+', help='Quoted display names, e.g. "TC-WGNO" "GPS Transformer"')
+    p.add_argument('--models', nargs='+', help='Quoted display names, e.g. "TWIG" "GPS Transformer"')
     p.add_argument('--epochs', type=int, default=100)
     p.add_argument('--force', action='store_true')
     a = p.parse_args()

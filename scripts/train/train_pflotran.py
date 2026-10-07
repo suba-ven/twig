@@ -5,10 +5,10 @@ from dataclasses import asdict
 import json
 from pathlib import Path
 import torch
-from tcwgno.pflotran_benchmark.pflotran_block_dataset_3d_fixed import build_block_dataloaders_3d
-from tcwgno.pflotran_benchmark.pflotran_h10_models import compute_laplacian_basis, make_graph_static_3d
-from tcwgno.pflotran_benchmark.pflotran_h10_training import TrainConfig, run_model_family
-from tcwgno.pflotran_benchmark.paper import build_paper_specs
+from twig.pflotran_benchmark.pflotran_block_dataset_3d_fixed import build_block_dataloaders_3d
+from twig.pflotran_benchmark.pflotran_h10_models import compute_laplacian_basis, make_graph_static_3d
+from twig.pflotran_benchmark.pflotran_h10_training import TrainConfig, run_model_family
+from twig.pflotran_benchmark.paper import build_paper_specs
 
 
 def main():

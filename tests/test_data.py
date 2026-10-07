@@ -1,5 +1,5 @@
 import numpy as np
-from tcwgno.data.common import SlidingWindowDataset, scenario_split
+from twig.data.common import SlidingWindowDataset, scenario_split
 
 
 def test_splits_are_disjoint_and_complete():

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import argparse
-from tcwgno.data.pflotran import build_block_dataloaders_3d
+from twig.data.pflotran import build_block_dataloaders_3d
 
 
 def main():
