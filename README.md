@@ -8,6 +8,7 @@ nine-model comparisons.
 ## Install
 
 ```bash
+cd code
 python -m venv .venv
 source .venv/bin/activate
 pip install -e '.[test]'
@@ -16,12 +17,12 @@ pip install -e '.[test]'
 The package is imported as `twig` (for example, `from twig.models import SATWIG3D`).
 Reinstall the editable package after updating an existing checkout.
 
-Run commands from the repository root. PyTorch Geometric must match your
+Run commands from the `code/` directory. PyTorch Geometric must match your
 PyTorch/CUDA installation. Airfoil uses TFRecord files and the `tfrecord` package.
 
 ## Reproduce the paper
 
-From the repository root, with Python 3.10 or newer:
+From `code/`, with Python 3.10 or newer:
 
 ```bash
 pip install -e .
@@ -63,15 +64,18 @@ the PFLOTRAN/Airfoil spatial figures show mean per-run test RMSE.
 
 ## Code Ocean
 
-Import this repository into the capsule's `/code` directory and configure the
-executable root `run` as its entry point. Pressing **Run** invokes this script.
-Keep `src/`, `configs/`, `scripts/`, `vis/`, and `tests/` in their current locations,
-including the frozen inputs in `/code/results/paper/`.
+The repository follows the capsule layout: executable files are under `code/`,
+datasets are under `data/`, and the top-level README and LICENSE document the
+repository. Code Ocean manages `metadata/` and `environment/`.
+
+Use `code/run` as the executable entry point (`/code/run` inside the capsule).
+Pressing **Run** invokes this script. The frozen inputs remain alongside the
+executable project in `code/results/paper/` (`/code/results/paper/` in the capsule).
 
 In the capsule environment build, select Python 3.10+ and install the packages
-in `requirements.txt` (plus setuptools>=68 and wheel for editable installation).
+in `code/requirements.txt` (plus setuptools>=68 and wheel for editable installation).
 The normal local setup `pip install -e .` also installs runtime dependencies.
-The root script uses the checked-out `src/` package via `PYTHONPATH`, so it
+The entry-point script uses the checked-out `src/` package via `PYTHONPATH`, so it
 requires no package installation or internet access at Run time.
 No CUDA runtime is needed for the default frozen-results workflow.
 
@@ -89,7 +93,7 @@ python tests/test_reproduction.py
 
 ## Selected experiments
 
-[configs/paper_selections.json](configs/paper_selections.json) records all 27
+[code/configs/paper_selections.json](code/configs/paper_selections.json) records all 27
 model/dataset selections, parameter counts, hashed provenance identifiers,
 selected field runs, and Airfoil's per-run training settings.
 
@@ -136,7 +140,7 @@ The existing downloader supplies PFLOTRAN and the shortened SI data package:
 
 ```bash
 bash scripts/download_data.sh
-python scripts/run_experiments/run_pflotran_benchmarks.py data/pflotran/raw/*.h5
+python scripts/run_experiments/run_pflotran_benchmarks.py ../data/pflotran/raw/*.h5
 python scripts/run_experiments/run_si_benchmarks.py --data /path/to/SI_equation_dataset.npy
 ```
 
@@ -147,7 +151,7 @@ the reported horizon. Edges and coordinates default to the downloaded files.
 
 Airfoil data is not included in the existing two-dataset download. Place the
 prepared Airfoil200 `meta.json`, `train.tfrecord`, `valid.tfrecord`, and
-`test.tfrecord` in `data/airfoil/raw/` using the download and 601-to-200-state
+`test.tfrecord` in `../data/airfoil/raw/` using the download and 601-to-200-state
 conversion commands in [data/README.md](data/README.md), then run:
 
 ```bash
@@ -157,7 +161,7 @@ python scripts/run_experiments/run_airfoil_benchmarks.py
 
 For exact checkpoint evaluation, reuse the original normalization and spectral
 artifacts (`normalization.json`, `airflow200_static.npz`,
-`airflow200_modes169.npz`) in `data/airfoil/artifacts/`. Recomputing eigenspaces
+`airflow200_modes169.npz`) in `../data/airfoil/artifacts/`. Recomputing eigenspaces
 can change eigenvector signs/bases; regenerated bases are suitable for fresh
 training but are not guaranteed compatible with old checkpoints.
 

@@ -9,8 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @dataclass(frozen=True)
 class ExperimentConfig:
-    data_dir: Path = Path("data/airfoil/raw")
-    artifact_dir: Path = Path("data/airfoil/artifacts")
+    data_dir: Path = Path("../data/airfoil/raw")
+    artifact_dir: Path = Path("../data/airfoil/artifacts")
     output_dir: Path = Path("results/airfoil")
     history: int = 20
     forecast_horizon: int = 20

@@ -31,7 +31,7 @@ def main(zoom=False,twig=False,output=None):
             curves=np.asarray(data[label],dtype=float)
             selected=selections[ds]['models'][label]
             assert curves.shape==(len(selected['seeds']),selections[ds]['rollout_steps']) and np.isfinite(curves).all()
-            seeds=selected['seeds'];runs=selected.get('runs');source=selected.get('source', 'configs/paper_selections.json')
+            seeds=selected['seeds'];runs=selected.get('runs');source=selected['sources']
             mean=curves.mean(0);sd=curves.std(0,ddof=1);steps=np.arange(1,len(mean)+1)
             ax.fill_between(steps,np.maximum(0,mean-sd),mean+sd,color=COLORS[label],alpha=.10,linewidth=0,zorder=1)
             ax.plot(steps,mean,color=COLORS[label],linestyle=STYLES[label],linewidth=1.5 if label=='TWIG' else 1.25,zorder=3)

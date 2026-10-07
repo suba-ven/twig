@@ -60,7 +60,7 @@ def prepare(source, output):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--source', type=Path, default=Path('data/airfoil/official'))
-    parser.add_argument('--output', type=Path, default=Path('data/airfoil/raw'))
+    parser.add_argument('--source', type=Path, default=Path('../data/airfoil/official'))
+    parser.add_argument('--output', type=Path, default=Path('../data/airfoil/raw'))
     args = parser.parse_args()
     prepare(args.source, args.output)

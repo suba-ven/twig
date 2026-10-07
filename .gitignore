@@ -12,12 +12,12 @@ data/pflotran/*
 data/si_diffusion/*
 !data/si_diffusion/.gitkeep
 data/downloads/
-results/**/*.pt
-results/**/*.npz
-results/**/*.npy
+code/results/**/*.pt
+code/results/**/*.npz
+code/results/**/*.npy
 
 # Small frozen paper curves are versioned; generated training arrays are not.
-!results/paper/*.npz
+!code/results/paper/*.npz
 data/airfoil/
 
 # Downloaded datasets and model weights (any location).
@@ -30,7 +30,7 @@ data/airfoil/
 *.tfrecord.*
 *.npy
 *.npz
-!results/paper/*.npz
+!code/results/paper/*.npz
 /data/*
 !/data/README.md
 !/data/pflotran/
@@ -52,8 +52,8 @@ htmlcov/
 *~
 /tmp/
 /temp/
-/results/codeocean/
-/figures/selected/
+/code/results/codeocean/
+/code/figures/selected/
 .env
 .env.*
 venv/
@@ -62,17 +62,17 @@ env/
 *.tar
 *.tar.gz
 *.tgz
-/results/*
-!/results/README.md
-!/results/paper/
-!/results/pflotran/
-!/results/si_diffusion/
-/results/pflotran/*
-!/results/pflotran/README.md
-!/results/pflotran/paper_summary/
-/results/si_diffusion/*
-!/results/si_diffusion/README.md
-!/results/si_diffusion/paper_summary/
+/code/results/*
+!/code/results/README.md
+!/code/results/paper/
+!/code/results/pflotran/
+!/code/results/si_diffusion/
+/code/results/pflotran/*
+!/code/results/pflotran/README.md
+!/code/results/pflotran/paper_summary/
+/code/results/si_diffusion/*
+!/code/results/si_diffusion/README.md
+!/code/results/si_diffusion/paper_summary/
 # Small frozen curves needed to redraw historical figures with current labels.
-!results/pflotran/paper_summary/archival_curves.npz
-!results/si_diffusion/paper_summary/archival_curves.npz
+!code/results/pflotran/paper_summary/archival_curves.npz
+!code/results/si_diffusion/paper_summary/archival_curves.npz

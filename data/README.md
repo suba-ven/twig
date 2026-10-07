@@ -2,7 +2,7 @@
 
 PFLOTRAN and SI diffusion data are hosted at
 [`subaven/twig-benchmark-data`](https://huggingface.co/datasets/subaven/twig-benchmark-data)
-and remain excluded from Git. From the repository root, download both archives
+and remain excluded from Git. From the `code/` directory, download both archives
 with:
 
 ```bash
@@ -16,10 +16,10 @@ The downloads are resumable. Fetch a single archive with
 ## PFLOTRAN
 
 `pflotran_paper_data.zip` is downloaded and its HDF5 scenario files are placed
-under `data/pflotran/raw/`. Validate and create the split manifest with:
+under `../data/pflotran/raw/`. Validate and create the split manifest with:
 
 ```bash
-python scripts/preprocess/preprocess_pflotran.py data/pflotran/raw/*.h5
+python scripts/preprocess/preprocess_pflotran.py ../data/pflotran/raw/*.h5
 ```
 
 The preprocessor uses the same
@@ -33,9 +33,9 @@ split seed. It creates `dataset_info.json`, which is the input to training.
 scenarios plus the graph metadata. The downloader installs:
 
 ```text
-data/si_diffusion/si_diffusion_data.pt
-data/si_diffusion/si_diffusion_graph_edges.pt
-data/si_diffusion/si_diffusion_node_coordinates.csv
+../data/si_diffusion/si_diffusion_data.pt
+../data/si_diffusion/si_diffusion_graph_edges.pt
+../data/si_diffusion/si_diffusion_node_coordinates.csv
 ```
 
 The packaged tensor has shape `(25, 100, 400, 2)`. Validate it and create its
@@ -61,8 +61,8 @@ path is supplied. Neither preprocessor mutates its input.
 If the helper script cannot be used, the equivalent archive downloads are:
 
 ```bash
-wget -c https://huggingface.co/datasets/subaven/twig-benchmark-data/resolve/main/pflotran_paper_data.zip
-wget -c https://huggingface.co/datasets/subaven/twig-benchmark-data/resolve/main/si_diffusion_paper_data.zip
+wget -c https://huggingface.co/datasets/subaven/twig-benchmark-../data/resolve/main/pflotran_paper_data.zip
+wget -c https://huggingface.co/datasets/subaven/twig-benchmark-../data/resolve/main/si_diffusion_paper_data.zip
 ```
 
 ## Final three-dataset comparison
@@ -73,15 +73,15 @@ using the public bucket from its
 [official downloader](https://github.com/google-deepmind/deepmind-research/blob/master/meshgraphnets/download_dataset.sh):
 
 ```bash
-mkdir -p data/airfoil/official
+mkdir -p ../data/airfoil/official
 for file in meta.json train.tfrecord valid.tfrecord test.tfrecord; do
-  wget -c -O "data/airfoil/official/$file" \
+  wget -c -O "../data/airfoil/official/$file" \
     "https://storage.googleapis.com/dm-meshgraphnets/airfoil/$file"
 done
 python scripts/preprocess/prepare_airfoil200.py \
-  --source data/airfoil/official --output data/airfoil/raw
+  --source ../data/airfoil/official --output ../data/airfoil/raw
 python scripts/preprocess/preprocess_airfoil.py \
-  --data data/airfoil/raw --artifacts data/airfoil/artifacts
+  --data ../data/airfoil/raw --artifacts ../data/airfoil/artifacts
 ```
 
 The public release contains 601 states per trajectory. `prepare_airfoil200.py`
@@ -105,8 +105,8 @@ for all three datasets can be plotted without any dataset download.
 ## Storage
 
 Never commit large datasets, downloaded archives, preprocessing artifacts, or
-checkpoints to Git. Keep them in ignored `data/` directories or attach them as
+checkpoints to Git. Keep them in ignored `../data/` directories or attach them as
 Code Ocean data assets when running new experiments. The default frozen-results
 workflow needs none of these downloads. On Sherlock, use project scratch for
-large data/preprocessing and compute nodes for preprocessing/training; pass
+large ../data/preprocessing and compute nodes for preprocessing/training; pass
 explicit input/output paths as appropriate.

@@ -11,8 +11,8 @@ from twig.airfoil_benchmark import config, prepare
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--data', type=Path, default=Path('data/airfoil/raw'))
-    p.add_argument('--artifacts', type=Path, default=Path('data/airfoil/artifacts'))
+    p.add_argument('--data', type=Path, default=Path('../data/airfoil/raw'))
+    p.add_argument('--artifacts', type=Path, default=Path('../data/airfoil/artifacts'))
     p.add_argument('--force', action='store_true')
     a = p.parse_args()
     prepare.CONFIG = replace(config.CONFIG, data_dir=a.data, artifact_dir=a.artifacts)

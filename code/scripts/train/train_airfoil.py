@@ -11,8 +11,8 @@ from twig.airfoil_benchmark.data import load_meta
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--data', type=Path, default=Path('data/airfoil/raw'))
-    p.add_argument('--artifacts', type=Path, default=Path('data/airfoil/artifacts'))
+    p.add_argument('--data', type=Path, default=Path('../data/airfoil/raw'))
+    p.add_argument('--artifacts', type=Path, default=Path('../data/airfoil/artifacts'))
     p.add_argument('--output', type=Path, default=Path('results/airfoil/selected'))
     p.add_argument('--models', nargs='+', help='Quoted display names, e.g. "TWIG" "GPS Transformer"')
     p.add_argument('--epochs', type=int, default=100)

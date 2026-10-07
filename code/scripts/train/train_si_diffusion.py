@@ -35,10 +35,10 @@ def build_specs(cfg, paths, device):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--data", default="data/si_diffusion/si_diffusion_data.pt",
+    p.add_argument("--data", default="../data/si_diffusion/si_diffusion_data.pt",
                    help="First-100 .pt package or full SI_equation_dataset.npy")
-    p.add_argument("--edges", default="data/si_diffusion/si_diffusion_graph_edges.pt")
-    p.add_argument("--coordinates", default="data/si_diffusion/si_diffusion_node_coordinates.csv")
+    p.add_argument("--edges", default="../data/si_diffusion/si_diffusion_graph_edges.pt")
+    p.add_argument("--coordinates", default="../data/si_diffusion/si_diffusion_node_coordinates.csv")
     p.add_argument("--output", default="results/si_diffusion/direct14_paper")
     p.add_argument("--models", nargs="*", help="Defaults to every paper-table model")
     # Selected SI training seeds: 42, 43, 45 for SwiGLU TWIG;

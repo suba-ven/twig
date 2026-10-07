@@ -9,10 +9,10 @@ from twig.si_benchmark.direct14_config import Direct14Config, Direct14Paths
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--data", default="data/si_diffusion/si_diffusion_data.pt")
-    p.add_argument("--edges", default="data/si_diffusion/si_diffusion_graph_edges.pt")
-    p.add_argument("--coordinates", default="data/si_diffusion/si_diffusion_node_coordinates.csv")
-    p.add_argument("--output-dir", default="data/si_diffusion")
+    p.add_argument("--data", default="../data/si_diffusion/si_diffusion_data.pt")
+    p.add_argument("--edges", default="../data/si_diffusion/si_diffusion_graph_edges.pt")
+    p.add_argument("--coordinates", default="../data/si_diffusion/si_diffusion_node_coordinates.csv")
+    p.add_argument("--output-dir", default="../data/si_diffusion")
     a = p.parse_args(); output = Path(a.output_dir); output.mkdir(parents=True, exist_ok=True)
     cfg = Direct14Config(); paths = Direct14Paths(Path(a.data), Path(a.edges), output,
         Path(__file__).resolve().parents[2] / "src/twig/si_benchmark",
